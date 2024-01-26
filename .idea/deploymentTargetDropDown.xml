@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="FormularioProdutoTest">
+        <State />
+      </entry>
+      <entry key="ListaCompraScreenTest">
+        <State />
+      </entry>
+      <entry key="app">
+        <State />
+      </entry>
+      <entry key="shouldShowBottomSheetOptionsWhenUserSelectListaCompra()">
+        <State />
+      </entry>
+      <entry key="shouldShowPesoNameWhenUserClickInIsPesoCheckBox()">
+        <State />
+      </entry>
+      <entry key="shouldShowRedBorderWhenUserClickAddProdutoWithoutName()">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>
