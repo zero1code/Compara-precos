@@ -1,4 +1,4 @@
-name: Build Release CI Compara Precos APP
+name: Run UI and Unit tests CI
 
 on:
   pull_request:
