@@ -27,5 +27,7 @@
 
 -keep class com.google.** { *; }
 
+-keepdirectories ../keystore.jks
+
 -keep class com.z1.comparaprecos.core.model.*
 -keep class com.z1.comparaprecos.core.database.model.*
