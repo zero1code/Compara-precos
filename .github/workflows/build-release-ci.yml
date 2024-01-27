@@ -122,14 +122,14 @@ jobs:
           name: compara-precos_prod_v${{ steps.properties.outputs.versionName }}_vc${{ steps.properties.outputs.versionCode }}_branch_${{ steps.properties.outputs.branch }}.apk
           path: ${{ steps.releaseApk.outputs.apkfile }}
 
-#      - name: Send Release to Google Play Console
-#        uses: r0adkll/upload-google-play@v1
-#        with:
-#          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-#          packageName: com.z1.comparaprecos
-#          releaseFiles: ./app/build/outputs/bundle/release/*.aab
-#          status: ${{ github.event.inputs.status }}
-#          track: ${{ github.event.inputs.track }}
+      - name: Send Release to Google Play Console
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          packageName: com.z1.comparaprecos
+          releaseFiles: ./app/build/outputs/bundle/release/*.aab
+          status: ${{ github.event.inputs.status }}
+          track: ${{ github.event.inputs.track }}
 
   create-tag:
     runs-on: ubuntu-latest

@@ -161,7 +161,7 @@ fun ListaCompraScreen(
     LaunchedEffect(key1 = uiEvent) {
         when (uiEvent) {
             is UiEvent.Inserted -> scope.launch {
-                scaffoldState.bottomSheetState.hide()
+                hideBottomSheet()
                 onEvent(
                     OnEvent.UpdateUiEvent(
                         UiEvent.ShowSnackbar(
@@ -173,7 +173,7 @@ fun ListaCompraScreen(
             }
 
             is UiEvent.Updated -> scope.launch {
-                scaffoldState.bottomSheetState.hide()
+                hideBottomSheet()
                 onEvent(
                     OnEvent.UpdateUiEvent(
                         UiEvent.ShowSnackbar(
@@ -185,7 +185,7 @@ fun ListaCompraScreen(
             }
 
             is UiEvent.Deleted -> scope.launch {
-                scaffoldState.bottomSheetState.hide()
+                hideBottomSheet()
                 onEvent(
                     OnEvent.UpdateUiEvent(
                         UiEvent.ShowSnackbar(
