@@ -55,6 +55,7 @@ android {
         }
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             buildConfigField("String", "ADMOB_OPEN_APP_ID", getProperties("ADMOB_OPEN_APP_ID"))
             enableUnitTestCoverage = true
             enableAndroidTestCoverage = true
@@ -78,6 +79,7 @@ dependencies {
 
     implementation(project(":core:common"))
     implementation(project(":core:datastore"))
+    implementation(project(":core:database"))
     implementation(project(":core:model"))
     implementation(project(":core:navigation"))
     implementation(project(":core:testing"))

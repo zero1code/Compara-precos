@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontwarn org.apiguardian.api.API$Status
+-dontwarn org.apiguardian.api.API
+
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+
+-keep class com.google.** { *; }
+
+-keep class com.z1.comparaprecos.core.model.*
+-keep class com.z1.comparaprecos.core.database.model.*
