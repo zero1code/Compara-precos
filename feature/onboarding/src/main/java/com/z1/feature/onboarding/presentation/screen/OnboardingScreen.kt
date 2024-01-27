@@ -22,16 +22,18 @@ import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.VerticalPager
@@ -122,7 +124,7 @@ fun OnboardingScreen(
         TitleHorizontalPager(
             modifier = Modifier
                 .weight(5f)
-                .padding(top = dimensionResource(id = dimen.large)),
+                .padding(top = dimensionResource(id = dimen.big)),
             horizontalState = horizontalState,
             pageColor = pageColor
         )
@@ -139,12 +141,20 @@ fun OnboardingScreen(
             modifier =
             Modifier
                 .fillMaxWidth()
-                .padding(top = dimensionResource(id = dimen.medium)),
+                .padding(
+                    top = dimensionResource(id = dimen.normal)
+                ),
             horizontalState = horizontalState,
             pageColor = pageColor
         )
 
         AnimatedContent(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    horizontal = dimensionResource(id = dimen.large),
+                    vertical = dimensionResource(id = dimen.normal)
+                ),
             targetState = showStartButton,
             label = "",
             transitionSpec = {
@@ -154,16 +164,10 @@ fun OnboardingScreen(
         ) { state ->
             CustomButton(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-                    .padding(
-                        horizontal = dimensionResource(id = dimen.large),
-                        vertical = dimensionResource(id = dimen.medium)
-                    )
                     .alpha(if (state) 1f else 0f),
                 containerColor = MaterialTheme.colorScheme.onBackground,
                 textColor = MaterialTheme.colorScheme.onPrimary,
-                titulo = "Começar",
+                titulo = stringResource(id = string.label_comecar),
                 textStyle = MaterialTheme.typography.bodyLarge,
                 onClick = {
                     onEvent(OnEvent.Onboarded(true))
@@ -265,8 +269,10 @@ fun SubtitleVerticalPager(
     ) { page ->
         CustomCard(
             modifier = Modifier
-                .heightIn(min = 180.dp, max = 220.dp)
-                .padding(horizontal = dimensionResource(id = dimen.large), vertical = 8.dp)
+                .padding(
+                    horizontal = dimensionResource(id = dimen.large),
+                    vertical = dimensionResource(id = dimen.small)
+                )
                 .graphicsLayer {
                     val startOffset =
                         ((verticalState.currentPage - page) + verticalState.currentPageOffsetFraction).absoluteValue
@@ -295,8 +301,8 @@ fun SubtitleVerticalPager(
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(dimensionResource(id = dimen.medium)),
+                    .fillMaxSize()
+                    .padding(horizontal = dimensionResource(id = dimen.medium)),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
