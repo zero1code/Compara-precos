@@ -24,6 +24,8 @@ android {
             useSupportLibrary = true
         }
 
+        manifestPlaceholders["ADMOB_APP_ID"] = getProperties("ADMOB_APP_ID")
+
         buildConfigField("String", "DEVICE_TEST_AD_ID", getProperties("DEVICE_TEST_AD_ID"))
 
         tasks.register("printVersionInfo") {
