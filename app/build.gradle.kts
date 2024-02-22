@@ -1,3 +1,4 @@
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -63,6 +64,10 @@ android {
             enableAndroidTestCoverage = true
             proguardFiles("proguard-android.txt", "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("release")
+
+            configure<CrashlyticsExtension> {
+                mappingFileUploadEnabled = true
+            }
         }
     }
 

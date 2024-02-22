@@ -2,6 +2,7 @@ package com.z1.comparaprecos.common.extensions
 
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -39,7 +40,9 @@ fun BigDecimal.getPercentageDifference(compare: BigDecimal): String {
 }
 
 private val onlyNumberRegex by lazy { "[^0-9 ]".toRegex() }
-fun BigDecimal.onlyNumbers(): String = this
+private val decimalFormat by lazy { DecimalFormat("#,##0.00") }
+fun BigDecimal.onlyNumbers(): String = decimalFormat
+    .format(this)
     .toString()
     .replace(onlyNumberRegex, "")
 
