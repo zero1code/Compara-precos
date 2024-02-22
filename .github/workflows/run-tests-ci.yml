@@ -45,6 +45,9 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
+      - name: Create local.properties
+        run: echo "ADMOB_APP_ID=${{ secrets.ADMOB_APP_ID }}" > local.properties
+
       - name: Run Tests
         uses: reactivecircus/android-emulator-runner@v2.25.0
         with:
