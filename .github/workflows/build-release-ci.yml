@@ -64,7 +64,11 @@ jobs:
           sudo udevadm trigger --name-match=kvm
 
       - name: Create local.properties
-        run: echo "ADMOB_APP_ID=${{ secrets.ADMOB_APP_ID }}" > local.properties
+        run: |
+          echo "ADMOB_APP_ID=${{ secrets.ADMOB_APP_ID }}" > local.properties
+          echo "DEVICE_TEST_AD_ID=${{ secrets.DEVICE_TEST_AD_ID }}" >> local.properties
+          echo "ADMOB_OPEN_APP_TEST_ID=${{ secrets.ADMOB_OPEN_APP_TEST_ID }}" >> local.properties
+          echo "ADMOB_OPEN_APP_ID=${{ secrets.ADMOB_OPEN_APP_ID }}" >> local.properties
 
       - name: Run Tests
         uses: reactivecircus/android-emulator-runner@v2.25.0
