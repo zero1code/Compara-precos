@@ -6,6 +6,7 @@ on:
       - develop
 
 env:
+  ADMOB_APP_ID: ${{ secrets.ADMOB_APP_ID }}
   DEVICE_TEST_AD_ID: ${{ secrets.DEVICE_TEST_AD_ID }}
   ADMOB_OPEN_APP_TEST_ID: ${{ secrets.ADMOB_OPEN_APP_TEST_ID }}
   ADMOB_OPEN_APP_ID: ${{ secrets.ADMOB_OPEN_APP_ID }}
