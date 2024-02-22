@@ -25,7 +25,7 @@ android {
             useSupportLibrary = true
         }
 
-        manifestPlaceholders["ADMOB_APP_ID"] = getProperties("ADMOB_APP_ID")
+        //manifestPlaceholders["ADMOB_APP_ID"] = getProperties("ADMOB_APP_ID")
 
         buildConfigField("String", "DEVICE_TEST_AD_ID", getProperties("DEVICE_TEST_AD_ID"))
 
@@ -55,6 +55,7 @@ android {
             buildConfigField("String", "ADMOB_OPEN_APP_ID", getProperties("ADMOB_OPEN_APP_TEST_ID"))
             enableUnitTestCoverage = true
             enableAndroidTestCoverage = true
+            resValue("string", "ADMOB_APP_ID", getProperties("ADMOB_APP_ID"))
         }
         release {
             isMinifyEnabled = true
@@ -64,6 +65,7 @@ android {
             enableAndroidTestCoverage = true
             proguardFiles("proguard-android.txt", "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("release")
+            resValue("string", "ADMOB_APP_ID", getProperties("ADMOB_APP_ID"))
 
             configure<CrashlyticsExtension> {
                 mappingFileUploadEnabled = true
