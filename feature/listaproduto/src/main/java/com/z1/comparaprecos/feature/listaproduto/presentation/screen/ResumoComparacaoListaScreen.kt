@@ -285,7 +285,10 @@ fun SomaProdutosQueEstaoNasDuasListas(
                 Text(
                     text = valorListaAtual.toMoedaLocal(),
                     color = MaterialTheme.colorScheme.onSurface,
-                    style = MaterialTheme.typography.titleMedium
+                    style = when {
+                        valorListaAtual.toString().length >= 7 -> MaterialTheme.typography.titleSmall
+                        else -> MaterialTheme.typography.titleMedium
+                    }
                 )
             }
 
@@ -305,7 +308,10 @@ fun SomaProdutosQueEstaoNasDuasListas(
                 Text(
                     text = valorListaComparada.toMoedaLocal(),
                     color = MaterialTheme.colorScheme.onSurface,
-                    style = MaterialTheme.typography.titleMedium
+                    style = when {
+                        valorListaComparada.toString().length >= 7 -> MaterialTheme.typography.titleSmall
+                        else -> MaterialTheme.typography.titleMedium
+                    }
                 )
             }
 
@@ -395,7 +401,10 @@ fun SomaTotal(
                 Text(
                     text = valorListaAtual.toMoedaLocal(),
                     color = MaterialTheme.colorScheme.onSurface,
-                    style = MaterialTheme.typography.titleMedium
+                    style = when {
+                        valorListaAtual.toString().length >= 7 -> MaterialTheme.typography.titleSmall
+                        else -> MaterialTheme.typography.titleMedium
+                    }
                 )
             }
 
@@ -415,7 +424,10 @@ fun SomaTotal(
                 Text(
                     text = valorListaComparada.toMoedaLocal(),
                     color = MaterialTheme.colorScheme.onSurface,
-                    style = MaterialTheme.typography.titleMedium
+                    style = when {
+                        valorListaComparada.toString().length >= 7 -> MaterialTheme.typography.titleSmall
+                        else -> MaterialTheme.typography.titleMedium
+                    }
                 )
             }
 

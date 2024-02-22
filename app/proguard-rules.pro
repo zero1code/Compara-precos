@@ -23,6 +23,9 @@
 -dontwarn org.apiguardian.api.API$Status
 -dontwarn org.apiguardian.api.API
 
+-keepattributes SourceFile,LineNumberTable        # Keep file names and line numbers.
+-keep public class * extends java.lang.Exception  # Optional: Keep custom exceptions.
+
 -keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
 
 -keep class com.google.** { *; }

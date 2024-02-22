@@ -1,3 +1,4 @@
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -14,8 +15,8 @@ android {
 
     defaultConfig {
         applicationId = "com.z1.comparaprecos"
-        versionCode = 3
-        versionName = "1.0.2"
+        versionCode = 4
+        versionName = "1.0.3"
 
         multiDexEnabled = true
 
@@ -63,6 +64,10 @@ android {
             enableAndroidTestCoverage = true
             proguardFiles("proguard-android.txt", "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("release")
+
+            configure<CrashlyticsExtension> {
+                mappingFileUploadEnabled = true
+            }
         }
     }
 
