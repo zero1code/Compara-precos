@@ -35,10 +35,10 @@ jobs:
 
       - name: Create local.properties
         run: |
-          echo "ADMOB_APP_ID=${{ secrets.ADMOB_APP_ID }}" > local.properties
-          echo "DEVICE_TEST_AD_ID=${{ secrets.DEVICE_TEST_AD_ID }}" >> local.properties
-          echo "ADMOB_OPEN_APP_TEST_ID=${{ secrets.ADMOB_OPEN_APP_TEST_ID }}" >> local.properties
-          echo "ADMOB_OPEN_APP_ID=${{ secrets.ADMOB_OPEN_APP_ID }}" >> local.properties
+          echo "ADMOB_APP_ID=\"${{ secrets.ADMOB_APP_ID }}\"" > local.properties
+          echo "DEVICE_TEST_AD_ID=\"${{ secrets.DEVICE_TEST_AD_ID }}\"" >> local.properties
+          echo "ADMOB_OPEN_APP_TEST_ID=\"${{ secrets.ADMOB_OPEN_APP_TEST_ID }}\"" >> local.properties
+          echo "ADMOB_OPEN_APP_ID=\"${{ secrets.ADMOB_OPEN_APP_ID }}\"" >> local.properties
 
       - name: Build with Gradle
         run: ./gradlew assembleDebug
